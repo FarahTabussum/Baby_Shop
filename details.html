@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <title>Petit Cotton | Baby Shop</title>
+  </head>
+
+  <body class="bg-base-100">
+    <!-- Navbar -->
+    <div
+      class="navbar bg-base-100 px-4 md:px-10 shadow-sm flex flex-wrap justify-between"
+    >
+      <!-- Left Section -->
+      <div class="flex items-center gap-4 md:gap-10 flex-wrap">
+        <!-- Logo + Brand -->
+        <div class="flex items-center gap-3">
+          <img
+            src="images/logo.png"
+            alt="Logo"
+            class="w-8 h-8 md:w-8 md:h-8 rounded-full"
+          />
+          <a
+            href="index.html"
+            class="!text-amber-600 text-2xl md:text-3xl font-bold"
+            >Petit Cotton</a
+          >
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 font-medium text-lg gap-2">
+            <li>
+              <a
+                href="shop.html"
+                class="hover:bg-orange-200 active:bg-orange-200 text-md md:text-lg rounded-xl text-gray-500"
+                >New In</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:bg-orange-200 active:bg-orange-200 text-lg md:text-lg text-gray-500 rounded-xl"
+                >Baby</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:bg-orange-200 active:bg-orange-200 text-lg md:text-lg text-gray-500 rounded-xl"
+                >Toddler</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:bg-orange-200 active:bg-orange-200 text-lg md:text-lg text-gray-500 rounded-xl"
+                >Journal</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="flex items-center gap-2 md:gap-4 mt-4 md:mt-0 flex-wrap">
+        <!-- Search -->
+        <input
+          type="text"
+          placeholder="Search..."
+          class="input input-bordered w-full sm:w-32 md:w-auto rounded-2xl"
+        />
+
+        <!-- Profile -->
+        <button class="btn btn-ghost btn-circle hover:bg-orange-200">
+          <img src="images/person.png" class="w-8 h-8" />
+        </button>
+
+        <!-- Cart -->
+        <div class="relative">
+          <button class="btn btn-ghost btn-circle hover:bg-orange-200">
+            <img src="images/carti.png" class="w-8 h-8" />
+          </button>
+          <span
+            id="cart-count"
+            class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full"
+            >0</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Section -->
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <!-- Breadcrumb -->
+      <div class="flex flex-col gap-2 mb-8">
+        <p class="text-gray-500 text-sm">
+          <a href="index.html" class="hover:text-orange-500">Home</a>
+          <span class="mx-1">/</span>
+          <a href="shop.html" class="hover:text-orange-500">Shop</a>
+          <span class="mx-1">/</span>
+          <span id="breadcrumb-category">BABY BOY</span>
+          <span class="mx-1">/</span>
+          <span id="breadcrumb-title">Organic Cotton Knit Cardigan</span>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <!-- Left: Product Image -->
+        <div>
+          <img
+            id="product-image"
+            src="images/Baby wearing beige knit sweater.png"
+            class="w-full rounded-2xl shadow-lg"
+          />
+        </div>
+
+        <!-- Right: Product Info -->
+        <div class="space-y-6">
+          <h1
+            id="product-title"
+            class="text-3xl md:text-4xl font-bold text-amber-800"
+          >
+            Organic Cotton Knit Cardigan
+          </h1>
+          <p id="product-color" class="text-gray-500 text-lg">Oatmeal</p>
+          <p id="product-price" class="text-2xl font-semibold text-gray-800">
+            $42.00
+          </p>
+
+          <!-- Description -->
+          <p id="product-description" class="text-gray-600 leading-relaxed">
+            Crafted from 100% organic cotton, this soft knit cardigan keeps your
+            little one warm and comfortable. Designed with delicate wooden
+            buttons and breathable fabric perfect for everyday wear.
+          </p>
+
+          <!-- Size Selector -->
+          <div>
+            <p class="font-semibold mb-2">Select Size</p>
+            <div class="flex gap-3 flex-wrap">
+              <button class="size-btn btn btn-outline btn-sm">0-3m</button>
+              <button class="size-btn btn btn-outline btn-sm">3-6m</button>
+              <button class="size-btn btn btn-outline btn-sm">6-12m</button>
+              <button class="size-btn btn btn-outline btn-sm">12-18m</button>
+            </div>
+          </div>
+
+          <!-- Quantity -->
+          <div>
+            <p class="font-semibold mb-2">Quantity</p>
+            <input
+              type="number"
+              value="1"
+              min="1"
+              class="input input-bordered w-24"
+            />
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex gap-4">
+            <button
+              class="btn bg-orange-500 text-white hover:bg-orange-600 px-8"
+            >
+              Add to Cart
+            </button>
+            <button class="btn btn-outline px-6">♡ Wishlist</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      // ===== Size selection highlight =====
+      const sizeButtons = document.querySelectorAll(".size-btn");
+      sizeButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          sizeButtons.forEach((btn) => {
+            btn.classList.remove(
+              "bg-orange-500",
+              "text-white",
+              "border-orange-500",
+            );
+            btn.classList.add("btn-outline");
+          });
+          this.classList.remove("btn-outline");
+          this.classList.add(
+            "bg-orange-500",
+            "text-white",
+            "border-orange-500",
+          );
+        });
+      });
+
+      // ===== Load product info from URL params =====
+      const params = new URLSearchParams(window.location.search);
+      const product = params.get("product") || "cardigan"; // default product
+      const category = params.get("category") || "baby-boy"; // default category
+
+      const products = {
+        cardigan: {
+          title: "Organic Cotton Knit Cardigan",
+          color: "Oatmeal",
+          price: "$42.00",
+          image: "images/Baby wearing beige knit sweater.png",
+          description:
+            "Crafted from 100% organic cotton, this soft knit cardigan keeps your little one warm and comfortable. Designed with delicate wooden buttons and breathable fabric perfect for everyday wear.",
+        },
+        onesie: {
+          title: "Essential Ribbed Onesie",
+          color: "Cloud White",
+          price: "$24.00",
+          image: "images/Baby in white onesie laughing.png",
+          description:
+            "A comfortable and breathable ribbed onesie perfect for everyday wear.",
+        },
+        jumper: {
+          title: "Soft Fleece Jumper",
+          color: "Dusty Blue",
+          price: "$28.00",
+          image: "images/Toddler wearing blue jumper.png",
+          description:
+            "Soft fleece jumper keeps your toddler warm and cozy during cooler days.",
+        },
+        romper: {
+          title: "Floral Linen Romper",
+          color: "Blush Pink",
+          price: "$36.00",
+          image: "images/Baby girl in pink floral dress.png",
+          description:
+            "Breathable floral linen romper perfect for little girls.",
+        },
+        booties: {
+          title: "Hand-Knit Booties",
+          color: "Cream",
+          price: "$18.00",
+          image: "images/Baby feet with knit booties.png",
+          description: "Hand-knit booties to keep tiny feet warm and cozy.",
+        },
+        "essentials-set": {
+          title: "Newborn Essentials Set",
+          color: "Sage Green",
+          price: "$55.00",
+          image: "images/Folded baby clothes stack.png",
+          description: "A complete essentials set for newborns.",
+        },
+        overalls: {
+          title: "Classic Denim Overalls",
+          color: "Washed Blue",
+          price: "$45.00",
+          image: "images/Child in denim overalls.png",
+          description: "Durable denim overalls for toddlers.",
+        },
+        beanie: {
+          title: "Wool Blend Beanie",
+          color: "Charcoal",
+          price: "$22.00",
+          image: "images/Baby wearing knitted hat.png",
+          description: "Cozy wool blend beanie for baby boys.",
+        },
+      };
+
+      const categories = {
+        "baby-boy": "BABY BOY",
+        "baby-girl": "BABY GIRL",
+      };
+
+      // Set product info dynamically
+      const p = products[product];
+      const c = categories[category] || "BABY BOY"; // default category
+
+      document.getElementById("breadcrumb-title").textContent = p.title;
+      document.getElementById("breadcrumb-category").textContent = c;
+      document.getElementById("product-title").textContent = p.title;
+      document.getElementById("product-color").textContent = p.color;
+      document.getElementById("product-price").textContent = p.price;
+      document.getElementById("product-image").src = p.image;
+      document.getElementById("product-description").textContent =
+        p.description;
+    </script>
+  </body>
+</html>

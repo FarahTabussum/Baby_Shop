@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop | Petit Cotton</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar bg-amber-50 px-6 md:px-12 shadow-sm">
+      <!-- LEFT: Search -->
+      <div class="flex-1">
+        <div
+          class="flex items-center gap-1 border rounded-full px-4 py-2 bg-base-200 w-fit"
+        >
+          <img
+            src="images/search.png"
+            alt="Search"
+            class="w-4 h-4 items-center"
+          />
+          <input
+            type="text"
+            placeholder="Search..."
+            class="bg-transparent outline-none text-sm w-32 md:w-48 items-center"
+          />
+        </div>
+      </div>
+
+      <!-- CENTER: Logo + Title -->
+      <div class="flex-none text-center">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="images/logo.png" class="w-8 h-8 rounded-full" />
+          <span class="text-2xl font-bold text-amber-600"> Petit Cotton </span>
+        </a>
+      </div>
+
+      <!-- RIGHT: Menu + Profile + Cart -->
+      <div class="flex-1 flex justify-end items-center gap-3">
+        <!-- Navigation Links -->
+        <div class="hidden lg:flex gap-6 font-medium">
+          <a href="shop.html" class="hover:text-orange-400">Shop</a>
+          <a href="#" class="hover:text-orange-400">Collections</a>
+          <a href="#" class="hover:text-orange-400">About</a>
+        </div>
+
+        <!-- Profile Button -->
+        <button class="btn btn-ghost btn-circle hover:bg-orange-200">
+          <img src="images/person.png" class="w-8 h-8" />
+        </button>
+
+        <!-- Cart Button -->
+        <div class="relative">
+          <button class="btn btn-ghost btn-circle hover:bg-orange-200">
+            <img src="images/carti.png" class="w-8 h-8" />
+          </button>
+
+          <!-- Cart Count Badge -->
+          <span
+            id="cart-count"
+            class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full"
+          >
+            0
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Catalog Button -->
+    <div class="lg:hidden p-4">
+      <button onclick="toggleSidebar()" class="btn btn-outline w-full">
+        ☰ Catalog
+      </button>
+    </div>
+
+    <div class="flex">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="fixed lg:sticky top-0 left-0 h-full lg:h-screen w-64 lg:w-1/4 bg-base-100 p-6 border-r transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50"
+      >
+        <h2 class="text-2xl font-bold mb-1">Catalog</h2>
+        <p class="text-sm text-amber-700 mb-6">128 Items</p>
+
+        <!-- Category -->
+        <p class="font-semibold mb-2 text-amber-600">Category</p>
+        <div class="flex flex-col gap-2 mb-6">
+          <label class="cursor-pointer flex items-center gap-2">
+            <input type="checkbox" class="checkbox checkbox-warning peer" />
+            <span class="peer-checked:font-bold">All Clothing</span>
+          </label>
+          <label class="cursor-pointer flex items-center gap-2">
+            <input type="checkbox" class="checkbox checkbox-warning peer" />
+            <span class="peer-checked:font-bold">Onesies</span>
+          </label>
+          <label class="cursor-pointer flex items-center gap-2">
+            <input type="checkbox" class="checkbox checkbox-warning peer" />
+            <span class="peer-checked:font-bold">Sets & Outfits</span>
+          </label>
+          <label class="cursor-pointer flex items-center gap-2">
+            <input type="checkbox" class="checkbox checkbox-warning peer" />
+            <span class="peer-checked:font-bold">Knitwear</span>
+          </label>
+          <label class="cursor-pointer flex items-center gap-2">
+            <input type="checkbox" class="checkbox checkbox-warning peer" />
+            <span class="peer-checked:font-bold">Accessories</span>
+          </label>
+        </div>
+
+        <!-- Size -->
+        <p class="font-semibold mt-6 mb-4 text-amber-600">SIZE</p>
+        <div class="grid grid-cols-3 gap-2 mb-6">
+          <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
+            0-3m
+          </button>
+          <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
+            3-6m
+          </button>
+          <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
+            6-12m
+          </button>
+          <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
+            12-18m
+          </button>
+          <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
+            18-24m
+          </button>
+          <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
+            2T
+          </button>
+        </div>
+
+        <!-- Color -->
+        <p class="font-semibold mt-6 mb-2 text-amber-600">COLOR</p>
+        <div class="grid grid-cols-5 gap-3">
+          <button
+            class="color-btn w-7 h-7 rounded-full bg-base-200 border-2 border-transparent"
+          ></button>
+          <button
+            class="color-btn w-7 h-7 rounded-full bg-pink-200 border-2 border-transparent"
+          ></button>
+          <button
+            class="color-btn w-7 h-7 rounded-full bg-amber-700 border-2 border-transparent"
+          ></button>
+          <button
+            class="color-btn w-7 h-7 rounded-full bg-lime-600 border-2 border-transparent"
+          ></button>
+          <button
+            class="color-btn w-7 h-7 rounded-full bg-lime-900 border-2 border-transparent"
+          ></button>
+          <button
+            class="color-btn w-7 h-7 rounded-full bg-amber-900 border-2 border-transparent"
+          ></button>
+        </div>
+      </aside>
+
+      <!-- Main Section -->
+      <main class="w-full lg:w-3/4 p-6">
+        <!-- Top Info + Sort Dropdown -->
+        <div class="mb-5 relative border-b pb-6">
+          <!-- Left Side: Breadcrumb + Title + Description -->
+          <div class="flex-1 flex flex-col gap-2">
+            <!-- Breadcrumb -->
+            <p class="text-gray-500 text-sm">
+              <a href="index.html" class="hover:text-orange-500">Home</a>
+              <span class="mx-1">/</span> Shop <span class="mx-1">/</span> NEW
+              ARRIVALS
+            </p>
+
+            <!-- Title -->
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2">
+              NEW ARRIVALS
+            </h2>
+
+            <!-- Description -->
+            <p class="text-gray-400 max-w-xl">
+              Timeless pieces crafted from the softest organic cotton for your
+              little one's comfort.
+            </p>
+          </div>
+
+          <!-- Right Side: Sort Dropdown -->
+          <div class="absolute bottom-0 right-0 mb-2">
+            <div class="dropdown dropdown-end">
+              <label
+                tabindex="0"
+                class="btn bg-white border border-gray-300 rounded-lg hover:bg-orange-400 items-center gap-2"
+              >
+                Sort By: <span id="sort-selected">Newest</span>
+                <svg
+                  class="w-4 h-4 ml-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </label>
+              <ul
+                tabindex="0"
+                class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40"
+              >
+                <li><a href="#" data-sort="Newest">Newest</a></li>
+                <li><a href="#" data-sort="Lowest Price">Lowest Price</a></li>
+                <li><a href="#" data-sort="Highest Price">Highest Price</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+          <!-- Card 1: Sale -->
+          <div class="bg-amber-50 p-4 rounded-2xl shadow relative">
+            <span
+              class="absolute top-2 left-2 bg-white text-gray-500 text-xs font-bold px-2 py-2"
+              >New</span
+            >
+            <img
+              src="images/Baby wearing beige knit sweater.png"
+              alt="Cardigan"
+              class="w-full object-cover rounded-lg mb-3"
+            />
+            <h3 class="text-lg font-semibold mb-1 text-amber-800 text-center">
+              Organic Cotton Knit Cardigan
+            </h3>
+            <p class="text-gray-400 mb-1 text-center">Oatmeal</p>
+            <p class="text-sm font-semibold text-center text-gray-800">
+              $42.00
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-amber-50 p-4 rounded-2xl shadow relative">
+            <img
+              src="images/Baby in white onesie laughing.png"
+              alt="Cardigan"
+              class="w-full object-cover rounded-lg mb-3"
+            />
+            <h3 class="text-lg font-semibold mb-1 text-amber-800 text-center">
+              Essential Ribbed Onesie
+            </h3>
+            <p class="text-gray-400 mb-1 text-center">Cloud White</p>
+            <p class="text-sm font-semibold text-center text-gray-800">
+              $24.00
+            </p>
+          </div>
+
+          <!-- Card 3: Sale + Discount -->
+          <div class="bg-amber-50 p-4 rounded-2xl shadow relative">
+            <span
+              class="absolute top-2 left-2 bg-amber-700 text-white text-xs font-bold px-2 py-2"
+              >Sale</span
+            >
+            <img
+              src="images/Toddler wearing blue jumper.png"
+              alt="Cardigan"
+              class="w-full object-cover rounded-lg mb-3"
+            />
+            <h3 class="text-lg font-semibold mb-1 text-amber-800 text-center">
+              Soft Fleece Jumper
+            </h3>
+            <p class="text-gray-400 mb-1 text-center">Dusty Blue</p>
+            <p class="text-sm font-semibold text-center text-gray-800">
+              <span class="line-through text-gray-400 mr-2">$38.00</span>$28.00
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-amber-50 p-4 rounded-2xl shadow relative">
+            <img
+              src="images/Baby girl in pink floral dress.png"
+              alt="Cardigan"
+              class="w-full object-cover rounded-lg mb-3"
+            />
+            <h3 class="text-lg font-semibold mb-1 text-amber-800 text-center">
+              Floral Linen Romper
+            </h3>
+            <p class="text-gray-400 mb-1 text-center">Blush Pink</p>
+            <p class="text-sm font-semibold text-center text-gray-700">
+              $36.00
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-amber-50 p-4 rounded-2xl shadow relative">
+            <img
+              src="images/Baby feet with knit booties.png"
+              alt="Cardigan"
+              class="w-full object-cover rounded-lg mb-3"
+            />
+            <h3 class="text-lg font-semibold mb-1 text-amber-800 text-center">
+              Hand-Knit Booties
+            </h3>
+            <p class="text-gray-400 mb-1 text-center">Cream</p>
+            <p class="text-sm font-semibold text-center text-gray-800">
+              $18.00
+            </p>
+          </div>
+
+          <!-- Card 6: Sale -->
+          <div class="bg-amber-50 p-4 rounded-2xl shadow relative">
+            <span
+              class="absolute top-2 left-2 bg-gray-700 text-white text-xs font-semibold px-2 py-2"
+              >BEST SELLER</span
+            >
+            <img
+              src="images/Folded baby clothes stack.png"
+              alt="Cardigan"
+              class="w-full object-cover rounded-lg mb-3"
+            />
+            <h3 class="text-lg font-semibold mb-1 text-amber-800 text-center">
+              Newborn Essentials Set
+            </h3>
+            <p class="text-gray-400 mb-1 text-center">Sage Green</p>
+            <p class="text-sm font-semibold text-center text-gray-800">
+              $55.00
+            </p>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="bg-amber-50 p-4 rounded-2xl shadow relative">
+            <img
+              src="images/Child in denim overalls.png"
+              alt="Cardigan"
+              class="w-full object-cover rounded-lg mb-3"
+            />
+            <h3 class="text-lg font-semibold mb-1 text-amber-800 text-center">
+              Classic Denim Overalls
+            </h3>
+            <p class="text-gray-400 mb-1 text-center">Washed Blue</p>
+            <p class="text-sm font-semibold text-center text-gray-800">
+              $45.00
+            </p>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="bg-amber-50 p-4 rounded-2xl shadow relative">
+            <span
+              class="absolute top-2 left-2 bg-white text-gray-500 text-xs font-bold px-2 py-2"
+              >New</span
+            >
+            <img
+              src="images/Baby wearing knitted hat.png"
+              alt="Cardigan"
+              class="w-full object-cover rounded-lg mb-3"
+            />
+            <h3 class="text-lg font-semibold mb-1 text-amber-800 text-center">
+              Wool Blend Beanie
+            </h3>
+            <p class="text-gray-400 mb-1 text-center">Charcoal</p>
+            <p class="text-sm font-semibold text-center text-gray-800">
+              $22.00
+            </p>
+          </div>
+        </div>
+        <!-- Pagination -->
+        <div class="flex justify-center mt-10">
+          <div class="flex items-center gap-2">
+            <!-- Previous -->
+            <button
+              class="page-btn btn btn-sm btn-outline hover:bg-orange-200"
+              data-page="prev"
+            >
+              &lt;
+            </button>
+
+            <!-- Page 1 -->
+            <button
+              class="page-btn btn btn-sm bg-orange-500 hover:bg-orange-200 border-orange-500"
+              data-page="1"
+            >
+              1
+            </button>
+
+            <!-- Page 2 -->
+            <button
+              class="page-btn btn btn-sm btn-outline hover:bg-orange-200"
+              data-page="2"
+            >
+              2
+            </button>
+
+            <!-- Dots -->
+            <span id="dots" class="px-2">...</span>
+
+            <!-- Page 3 (hidden initially) -->
+            <button
+              class="page-btn btn btn-sm btn-outline hover:bg-orange-200 hidden"
+              data-page="3"
+            >
+              3
+            </button>
+
+            <!-- Next -->
+            <button
+              class="page-btn btn btn-sm btn-outline hover:bg-orange-200"
+              data-page="next"
+            >
+              &gt;
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /* ===== Toggle Sidebar (Mobile) ===== */
+        window.toggleSidebar = function () {
+          const sidebar = document.getElementById("sidebar");
+          sidebar.classList.toggle("-translate-x-full");
+        };
+
+        /* ===== SIZE BUTTONS ===== */
+        const sizeButtons = document.querySelectorAll(".size-btn");
+
+        sizeButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            sizeButtons.forEach((btn) => {
+              btn.classList.remove(
+                "bg-orange-500",
+                "text-white",
+                "border-orange-500",
+              );
+              btn.classList.add("btn-outline");
+            });
+
+            this.classList.remove("btn-outline");
+            this.classList.add(
+              "bg-orange-500",
+              "text-white",
+              "border-orange-500",
+            );
+          });
+        });
+
+        // Sort dropdown functionality
+        const sortLinks = document.querySelectorAll(".dropdown-content a");
+        const sortSelected = document.getElementById("sort-selected");
+
+        sortLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const value = this.getAttribute("data-sort");
+            sortSelected.textContent = value;
+
+            // Optional: Add your sort logic here for products
+            console.log("Selected sort:", value);
+          });
+        });
+        /* ===== PAGINATION ===== */
+        const pageButtons = document.querySelectorAll(".page-btn");
+        const dots = document.getElementById("dots");
+
+        let currentPage = 1;
+        const totalPages = 3;
+
+        function updatePagination(page) {
+          currentPage = page;
+
+          pageButtons.forEach((btn) => {
+            btn.classList.remove(
+              "bg-orange-500",
+              "text-white",
+              "border-orange-500",
+            );
+            btn.classList.add("btn-outline");
+          });
+
+          const activeBtn = document.querySelector(
+            `.page-btn[data-page="${page}"]`,
+          );
+          if (activeBtn) {
+            activeBtn.classList.remove("btn-outline");
+            activeBtn.classList.add(
+              "bg-orange-500",
+              "text-white",
+              "border-orange-500",
+            );
+          }
+
+          // Show page 3 only when on page 2 or 3
+          const page3 = document.querySelector('.page-btn[data-page="3"]');
+
+          if (page >= 2) {
+            page3.classList.remove("hidden");
+            dots.classList.add("hidden");
+          } else {
+            page3.classList.add("hidden");
+            dots.classList.remove("hidden");
+          }
+        }
+
+        pageButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const value = this.getAttribute("data-page");
+
+            if (value === "next" && currentPage < totalPages) {
+              updatePagination(currentPage + 1);
+            } else if (value === "prev" && currentPage > 1) {
+              updatePagination(currentPage - 1);
+            } else if (!isNaN(value)) {
+              updatePagination(Number(value));
+            }
+          });
+        });
+
+        /* ===== COLOR BUTTONS ===== */
+        const colorButtons = document.querySelectorAll(".color-btn");
+
+        colorButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            colorButtons.forEach((btn) => {
+              btn.classList.remove("border-orange-500");
+              btn.classList.add("border-transparent");
+            });
+
+            this.classList.remove("border-transparent");
+            this.classList.add("border-orange-500");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

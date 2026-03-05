@@ -31,6 +31,49 @@
           <li><a class="text-gray-500">Journal</a></li>
         </ul>
       </div>
+      <div class="flex items-center gap-2 md:gap-4 mt-4 md:mt-0 flex-wrap">
+        <!-- Search -->
+        <input
+          type="text"
+          placeholder="Search..."
+          class="input input-bordered w-full sm:w-32 md:w-auto rounded-2xl"
+        />
+
+        <!-- Avatar Dropdown -->
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 md:w-15 rounded-full shadow-sm bg-orange-100">
+              <img src="images/person.png" alt="User" />
+            </div>
+          </label>
+          <ul
+            tabindex="0"
+            class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a class="justify-between"
+                >Profile<span class="badge">New</span></a
+              >
+            </li>
+            <li><a>Settings</a></li>
+            <li><a>Logout</a></li>
+          </ul>
+        </div>
+        <!-- Cart Button -->
+        <div class="relative">
+          <button class="btn btn-ghost btn-circle hover:bg-orange-200">
+            <img src="images/carti.png" class="w-8 h-8" />
+          </button>
+
+          <!-- Cart Count Badge -->
+          <span
+            id="cart-count"
+            class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full"
+          >
+            0
+          </span>
+        </div>
+      </div>
     </div>
 
     <!-- ================= PRODUCT SECTION ================= -->
@@ -148,17 +191,142 @@
           <!-- Size Selection -->
           <div>
             <p class="font-semibold mb-2">Select Size</p>
-            <div class="flex gap-3">
-              <button class="size-btn btn btn-outline btn-sm">0-3m</button>
-              <button class="size-btn btn btn-outline btn-sm">3-6m</button>
-              <button class="size-btn btn btn-outline btn-sm">6-12m</button>
+
+            <div class="grid grid-cols-3 gap-4">
+              <button
+                class="size-btn btn btn-outline w-30 h-12 text-base hover:bg-orange-200"
+              >
+                0-3M
+              </button>
+              <button
+                class="size-btn btn btn-outline w-30 h-12 text-base hover:bg-orange-200"
+              >
+                3-6M
+              </button>
+              <button
+                class="size-btn btn btn-outline w-30 h-12 text-base hover:bg-orange-200"
+              >
+                6-12M
+              </button>
+              <button
+                class="size-btn btn btn-outline w-30 h-12 text-base hover:bg-orange-200"
+              >
+                12-18M
+              </button>
+              <button
+                class="size-btn btn btn-outline w-30 h-12 text-base hover:bg-orange-200"
+              >
+                18-24M
+              </button>
+              <button
+                class="size-btn btn btn-outline w-30 h-12 text-base hover:bg-orange-200"
+              >
+                2-3Y
+              </button>
             </div>
           </div>
 
           <!-- Add to Cart -->
-          <button class="btn bg-orange-500 text-white hover:bg-orange-600 px-8">
-            Add to Cart
-          </button>
+          <div class="grid grid-cols-2 items-center gap-4">
+            <!-- Quantity Selector -->
+            <div
+              class="grid grid-cols-3 items-center border rounded-lg overflow-hidden"
+            >
+              <button
+                id="qty-minus"
+                class="px-4 py-2 text-lg font-bold hover:bg-gray-100"
+              >
+                -
+              </button>
+
+              <span id="qty-value" class="px-5 font-semibold">1</span>
+
+              <button
+                id="qty-plus"
+                class="px-4 py-2 text-lg font-bold hover:bg-gray-100"
+              >
+                +
+              </button>
+            </div>
+
+            <!-- Add to Cart -->
+            <button
+              id="add-to-cart-btn"
+              class="btn bg-orange-500 text-white hover:bg-orange-600 px-8"
+            >
+              ADD TO BAG
+            </button>
+          </div>
+
+          <!-- Stock Message -->
+          <div
+            class="bg-green-100 text-green-700 text-sm rounded-lg px-4 py-2 flex items-center justify-center gap-2 mt-3"
+          >
+            <img src="images/tick_icon.png" class="w-4 h-4" />
+            <span>In stock, ready to ship</span>
+          </div>
+
+          <!-- paragraph -->
+          <p class="text-gray-400 text-md pt-2">
+            <span
+              >Crafted from GOTS certified organic cotton, this heirloom-
+              quality knit romper features a delicate textured stitch and
+              natural coconut buttons. Soft, breathable, and gentle on sensitive
+              skin, it's designed for play and rest alike.</span
+            >
+            on orders over $100
+          </p>
+
+          <!-- dropdown -->
+          <div class="mt-6 space-y-3">
+            <!-- Dropdown 1 -->
+            <div class="collapse border border-gray-200 rounded-lg">
+              <input type="checkbox" />
+              <div
+                class="collapse-title flex justify-between items-center font-semibold text-gray-600"
+              >
+                Materials & Care
+                <img src="images/arrow_Icon.jpg" class="w-4 h-4" />
+              </div>
+              <div class="collapse-content text-gray-600">
+                <p>
+                  Made from 100% organic cotton. Machine wash cold. Tumble dry
+                  low.
+                </p>
+              </div>
+            </div>
+
+            <!-- Dropdown 2 -->
+            <div class="collapse border border-gray-200 rounded-lg">
+              <input type="checkbox" />
+              <div
+                class="collapse-title flex justify-between items-center font-semibold text-gray-600"
+              >
+                Shipping & Returns
+                <img src="images/arrow_Icon.jpg" class="w-4 h-4" />
+              </div>
+              <div class="collapse-content text-gray-600">
+                <p>Free shipping on orders over $50. Easy 30-day returns.</p>
+              </div>
+            </div>
+
+            <!-- Dropdown 3 -->
+            <div class="collapse border border-gray-200 rounded-lg">
+              <input type="checkbox" />
+              <div
+                class="collapse-title flex justify-between items-center font-semibold text-gray-600"
+              >
+                Size Guide
+                <img src="images/arrow_Icon.jpg" class="w-4 h-4" />
+              </div>
+              <div class="collapse-content text-gray-600">
+                <p>
+                  Please check our size chart to find the perfect fit for your
+                  baby.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Rating Modal -->
@@ -209,6 +377,17 @@
       const productKey = params.get("product") || "cardigan";
       const categoryKey = params.get("category") || "baby-boy";
 
+      // ===== Cart Counter =====
+      const cartBtn = document.getElementById("add-to-cart-btn");
+      const cartCount = document.getElementById("cart-count");
+
+      let cartItems = 0;
+
+      cartBtn.addEventListener("click", () => {
+        cartItems += quantity; // uses your quantity selector
+        cartCount.textContent = cartItems;
+      });
+
       // ===== Product Database =====
       const products = {
         cardigan: {
@@ -221,38 +400,46 @@
         onesie: {
           title: "Essential Ribbed Onesie",
           price: "$24.00",
+          color: "Cloud White",
           image: "images/Baby in white onesie laughing.png",
         },
         jumper: {
           title: "Soft Fleece Jumper",
           price: "$28.00",
+          oldPrice: "$38.00",
+          color: "Dusty Blue",
           image: "images/Toddler wearing blue jumper.png",
           tag: "sale",
         },
         romper: {
           title: "Floral Linen Romper",
           price: "$36.00",
+          color: "Blush Pink",
           image: "images/Baby girl in pink floral dress.png",
         },
         booties: {
           title: "Hand-Knit Booties",
           price: "$18.00",
+          color: "Cream",
           image: "images/Baby feet with knit booties.png",
         },
         "essentials-set": {
           title: "Newborn Essentials Set",
           price: "$55.00",
+          color: "Sage Green",
           image: "images/Folded baby clothes stack.png",
           tag: "best-seller",
         },
         overalls: {
           title: "Classic Denim Overalls",
           price: "$45.00",
+          color: "Washed Blue",
           image: "images/Child in denim overalls.png",
         },
         beanie: {
           title: "Wool Blend Beanie",
           price: "$22.00",
+          color: "Charcoal",
           image: "images/Baby wearing knitted hat.png",
           tag: "new",
         },
@@ -272,12 +459,43 @@
 
       document.getElementById("product-price").textContent = product.price;
 
+      document.getElementById("product-color").textContent =
+        "Color: " + (product.color || "Unknown");
+
       document.getElementById("breadcrumb-category").textContent =
         categories[categoryKey] || "BABY BOY";
 
       // ===== Update Main Image =====
       const mainImage = document.getElementById("main-image");
       mainImage.src = product.image;
+
+      // ===== Quantity Selector =====
+      const minusBtn = document.getElementById("qty-minus");
+      const plusBtn = document.getElementById("qty-plus");
+      const qtyValue = document.getElementById("qty-value");
+
+      let quantity = 1;
+
+      plusBtn.addEventListener("click", () => {
+        quantity++;
+        qtyValue.textContent = quantity;
+      });
+
+      minusBtn.addEventListener("click", () => {
+        if (quantity > 1) {
+          quantity--;
+          qtyValue.textContent = quantity;
+        }
+      });
+
+      //price update
+
+      const oldPriceEl = document.getElementById("old-price");
+
+      if (product.oldPrice) {
+        oldPriceEl.textContent = product.oldPrice;
+        oldPriceEl.classList.remove("hidden");
+      }
 
       // ===== Wishlist Heart =====
       const wishlistBtn = document.getElementById("wishlist-btn");

@@ -428,5 +428,26 @@
         </div>
       </div>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // ===== CART COUNT INSIDE CART BUTTON =====
+        function updateCartCount() {
+          // Get cart from localStorage or empty array
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+          // Calculate total quantity
+          const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+          // Update the number inside the span
+          const cartCountEl = document.getElementById("cart-count");
+          if (cartCountEl) {
+            cartCountEl.textContent = totalItems;
+          }
+        }
+
+        // Run on page load
+        updateCartCount();
+      });
+    </script>
   </body>
 </html>

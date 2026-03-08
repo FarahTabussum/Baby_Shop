@@ -61,11 +61,12 @@
         </div>
         <!-- Cart Button -->
         <div class="relative">
-          <button class="btn btn-ghost btn-circle hover:bg-orange-200">
-            <img src="images/carti.png" class="w-8 h-8" />
-          </button>
+          <a href="cart.html">
+            <button class="btn btn-ghost btn-circle hover:bg-orange-200">
+              <img src="images/carti.png" class="w-8 h-8" />
+            </button>
+          </a>
 
-          <!-- Cart Count Badge -->
           <span
             id="cart-count"
             class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full"
@@ -348,6 +349,11 @@
         </dialog>
       </div>
     </div>
+    <div id="cart-toast" class="toast toast-top toast-end hidden">
+      <div class="alert alert-success">
+        <span>Added to cart ✔</span>
+      </div>
+    </div>
 
     <!-- ================= SCRIPT ================= -->
     <script>
@@ -381,11 +387,30 @@
       const cartBtn = document.getElementById("add-to-cart-btn");
       const cartCount = document.getElementById("cart-count");
 
-      let cartItems = 0;
+      const toast = document.getElementById("cart-toast");
 
       cartBtn.addEventListener("click", () => {
-        cartItems += quantity; // uses your quantity selector
-        cartCount.textContent = cartItems;
+        const selectedSize =
+          document.querySelector(".size-btn.bg-orange-500")?.textContent ||
+          "N/A";
+
+        const productData = {
+          title: product.title,
+          price: product.price,
+          image: product.image,
+          color: product.color,
+          size: selectedSize,
+          quantity: quantity,
+        };
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        cart.push(productData);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Update cart badge immediately
+        updateCartBadge();
       });
 
       // ===== Product Database =====
@@ -451,6 +476,27 @@
       };
 
       const product = products[productKey];
+
+      // ===== Load Cart Count From localStorage =====
+      function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Initialize totalItems to 0
+        let totalItems = 0;
+
+        cart.forEach((item) => {
+          totalItems += item.quantity;
+        });
+
+        const cartCount = document.getElementById("cart-count");
+
+        if (cartCount) {
+          cartCount.textContent = totalItems;
+        }
+      }
+
+      // Run when page loads
+      updateCartBadge();
 
       // ===== Update Text =====
       document.getElementById("breadcrumb-title").textContent = product.title;

@@ -57,11 +57,12 @@
 
         <!-- Cart Button -->
         <div class="relative">
-          <button class="btn btn-ghost btn-circle hover:bg-orange-200">
-            <img src="images/carti.png" class="w-8 h-8" />
-          </button>
+          <a href="cart.html">
+            <button class="btn btn-ghost btn-circle hover:bg-orange-200">
+              <img src="images/carti.png" class="w-8 h-8" />
+            </button>
+          </a>
 
-          <!-- Cart Count Badge -->
           <span
             id="cart-count"
             class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full"
@@ -470,7 +471,6 @@
 
         /* ===== SIZE BUTTONS ===== */
         const sizeButtons = document.querySelectorAll(".size-btn");
-
         sizeButtons.forEach((button) => {
           button.addEventListener("click", function () {
             sizeButtons.forEach((btn) => {
@@ -481,7 +481,6 @@
               );
               btn.classList.add("btn-outline");
             });
-
             this.classList.remove("btn-outline");
             this.classList.add(
               "bg-orange-500",
@@ -491,20 +490,18 @@
           });
         });
 
-        // Sort dropdown functionality
+        /* ===== SORT DROPDOWN ===== */
         const sortLinks = document.querySelectorAll(".dropdown-content a");
         const sortSelected = document.getElementById("sort-selected");
-
         sortLinks.forEach((link) => {
           link.addEventListener("click", function (e) {
             e.preventDefault();
             const value = this.getAttribute("data-sort");
             sortSelected.textContent = value;
-
-            // Optional: Add your sort logic here for products
             console.log("Selected sort:", value);
           });
         });
+
         /* ===== PAGINATION ===== */
         const pageButtons = document.querySelectorAll(".page-btn");
         const dots = document.getElementById("dots");
@@ -538,7 +535,6 @@
 
           // Show page 3 only when on page 2 or 3
           const page3 = document.querySelector('.page-btn[data-page="3"]');
-
           if (page >= 2) {
             page3.classList.remove("hidden");
             dots.classList.add("hidden");
@@ -564,18 +560,29 @@
 
         /* ===== COLOR BUTTONS ===== */
         const colorButtons = document.querySelectorAll(".color-btn");
-
         colorButtons.forEach((button) => {
           button.addEventListener("click", function () {
             colorButtons.forEach((btn) => {
               btn.classList.remove("border-orange-500");
               btn.classList.add("border-transparent");
             });
-
             this.classList.remove("border-transparent");
             this.classList.add("border-orange-500");
           });
         });
+
+        /* ===== CART BADGE ===== */
+        function updateCartBadge() {
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+          const cartCount = document.getElementById("cart-count");
+          if (cartCount) {
+            cartCount.textContent = totalItems; // Shows 0 if empty
+          }
+        }
+
+        // Run on page load
+        updateCartBadge();
       });
     </script>
   </body>

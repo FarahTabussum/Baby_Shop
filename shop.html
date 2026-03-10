@@ -34,13 +34,12 @@
       </div>
 
       <!-- CENTER: Logo + Title -->
-      <div class="flex-none text-center">
+      <div class="hidden sm:flex flex-none text-center">
         <a href="index.html" class="flex items-center gap-2">
           <img src="images/logo.png" class="w-8 h-8 rounded-full" />
-          <span class="text-2xl font-bold text-amber-600"> Petit Cotton </span>
+          <span class="text-2xl font-bold text-amber-600">Petit Cotton</span>
         </a>
       </div>
-
       <!-- RIGHT: Menu + Profile + Cart -->
       <div class="flex-1 flex justify-end items-center gap-3">
         <!-- Navigation Links -->
@@ -163,7 +162,9 @@
       <!-- Main Section -->
       <main class="w-full lg:w-3/4 p-6">
         <!-- Top Info + Sort Dropdown -->
-        <div class="mb-5 relative border-b pb-6">
+        <div
+          class="mb-5 relative border-b pb-6 flex flex-col md:flex-row md:items-end gap-4"
+        >
           <!-- Left Side: Breadcrumb + Title + Description -->
           <div class="flex-1 flex flex-col gap-2">
             <!-- Breadcrumb -->
@@ -186,7 +187,7 @@
           </div>
 
           <!-- Right Side: Sort Dropdown -->
-          <div class="absolute bottom-0 right-0 mb-2">
+          <div class="flex-shrink-0 mt-4 md:mt-0 md:ml-4">
             <div class="dropdown dropdown-end">
               <label
                 tabindex="0"

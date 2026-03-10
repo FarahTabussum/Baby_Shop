@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Shop | Petit Cotton</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm px-6 py-4 flex justify-between items-center">
+      <!-- Left side: Logo + Text -->
+      <div class="flex items-center space-x-2">
+        <img
+          src="Images/Container (4).png"
+          alt="Petit Cotton Logo"
+          class="h-8 w-8 object-contain"
+        />
+        <span class="text-2xl font-semibold text-amber-700">Petit Cotton</span>
+      </div>
+
+      <!-- Right side: Buttons -->
+      <div class="flex items-center space-x-4">
+        <!-- Return To Cart Button -->
+        <a
+          href="cart.html"
+          class="btn bg-base-100 btn-sm text-amber-500 rounded-lg hover:bg-amber-100"
+        >
+          Return To Cart
+        </a>
+
+        <!-- Secure Checkout Button -->
+        <a
+          href="checkout.html"
+          class="btn bg-base-100 btn-sm flex items-center space-x-2 hover:bg-amber-100"
+        >
+          <!-- Icon (using DaisyUI or Font Awesome) -->
+          <img
+            src="images/Container (3).png"
+            alt="Lock Icon"
+            class="h-3 w-3 object-contain"
+          />
+          <span class="text-amber-500">Secure Checkout</span>
+        </a>
+      </div>
+    </nav>
+    <!-- Checkout Section -->
+    <section class="px-6 py-8 flex flex-col md:flex-row gap-6">
+      <!-- Left Side: Steps & Shipping -->
+      <div class="flex-1 bg-white p-6 rounded-lg shadow-md">
+        <!-- Steps -->
+        <div
+          class="flex items-center text-gray-500 text-sm font-medium space-x-2 mb-6"
+        >
+          <span class="text-amber-600 font-semibold">Cart</span>
+          <span>&gt;</span>
+          <span class="text-amber-600 font-semibold">Information</span>
+          <span>&gt;</span>
+          <span class="text-black font-semibold">Shipping</span>
+          <span>&gt;</span>
+          <span class="text-amber-600 font-semibold">Payment</span>
+        </div>
+
+        <!-- Shipping Address Section -->
+        <div class="mb-4">
+          <!-- Title + Counter -->
+          <div class="flex justify-between items-center mb-2">
+            <h2 class="text-lg font-bold text-gray-800">Shipping Address</h2>
+            <span class="text-sm text-gray-600 font-medium">0/9</span>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="h-4 bg-gray-200 rounded-full">
+            <div
+              class="h-4 w-0 bg-green-500 rounded-full transition-all duration-300"
+            ></div>
+          </div>
+        </div>
+        <!-- Contact Info Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <!-- Header: CONTACT + Change Button -->
+          <div class="flex justify-between items-center mb-3">
+            <h3 class="text-lg font-bold text-gray-800">CONTACT</h3>
+            <button class="text-sm text-gray-600 bg-base-100 btn btn-sm">
+              Change
+            </button>
+          </div>
+          <input
+            id="lastName"
+            type="text"
+            placeholder="Enter Email.."
+            class="input input-bordered w-full"
+          />
+
+          <!-- Input Fields: First Name & Last Name -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- First Name -->
+            <div class="flex flex-col my-4">
+              <label
+                class="text-sm font-medium text-gray-600 mb-1"
+                for="firstName"
+                >First Name</label
+              >
+              <input
+                id="firstName"
+                type="text"
+                placeholder="Enter first name"
+                class="input input-bordered w-full"
+              />
+            </div>
+
+            <!-- Last Name -->
+            <div class="flex flex-col my-4">
+              <label
+                class="text-sm font-medium text-gray-600 mb-1"
+                for="lastName"
+                >Last Name</label
+              >
+              <input
+                id="lastName"
+                type="text"
+                placeholder="Enter last name"
+                class="input input-bordered w-full"
+              />
+            </div>
+          </div>
+          <!-- Shipping Address Form -->
+
+          <!-- Header: CONTACT + Change button already done above if needed -->
+
+          <!-- Address -->
+          <div class="mb-4">
+            <label class="text-sm font-medium text-gray-600 mb-1" for="address"
+              >Address</label
+            >
+            <div class="relative">
+              <span
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+              >
+                <!-- Example home/location icon SVG -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10h14V10"
+                  />
+                </svg>
+              </span>
+              <input
+                id="address"
+                type="text"
+                placeholder="123 Main St"
+                class="input input-bordered w-full pl-10"
+              />
+            </div>
+          </div>
+
+          <!-- Apartment/Suite -->
+          <div class="mb-4">
+            <label
+              class="text-sm font-medium text-gray-600 mb-1"
+              for="apartment"
+              >Apartment, suite, etc. (optional)</label
+            >
+            <input
+              id="apartment"
+              type="text"
+              placeholder="Apt, suite, etc."
+              class="input input-bordered w-full"
+            />
+          </div>
+
+          <!-- Zip Code / City / State -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div class="flex flex-col">
+              <label class="text-sm font-medium text-gray-600 mb-1" for="zip"
+                >Zip Code</label
+              >
+              <input
+                id="zip"
+                type="text"
+                placeholder="12345"
+                class="input input-bordered w-full"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label class="text-sm font-medium text-gray-600 mb-1" for="city"
+                >City</label
+              >
+              <input
+                id="city"
+                type="text"
+                placeholder="City"
+                class="input input-bordered w-full"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label class="text-sm font-medium text-gray-600 mb-1" for="state"
+                >State</label
+              >
+              <input
+                id="state"
+                type="text"
+                placeholder="State"
+                class="input input-bordered w-full"
+              />
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="mb-4">
+            <label class="text-sm font-medium text-gray-600 mb-1" for="phone"
+              >Phone</label
+            >
+            <div class="relative flex items-center">
+              <span class="absolute left-3 text-gray-400 flex items-center">
+                <!-- Phone icon SVG -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5h2l3 7-2 2a11 11 0 005 5l2-2 7 3v2a1 1 0 01-1 1h-2a16 16 0 01-16-16V6a1 1 0 011-1z"
+                  />
+                </svg>
+              </span>
+              <input
+                id="phone"
+                type="text"
+                placeholder="(555) 123-4567"
+                class="input input-bordered w-full pl-10 pr-40"
+              />
+              <span class="absolute right-3 text-gray-500 text-sm"
+                >For delivery updates</span
+              >
+            </div>
+          </div>
+
+          <!-- Save Info Checkbox -->
+          <div class="flex items-center mt-4">
+            <input
+              type="checkbox"
+              id="saveInfo"
+              class="checkbox checkbox-primary mr-2"
+            />
+            <label for="saveInfo" class="text-sm text-gray-700"
+              >Save this information for next time</label
+            >
+          </div>
+        </div>
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between items-center mt-6">
+          <!-- Left: Return to Information -->
+          <a
+            href="information.html"
+            class="btn btn-ghost flex items-center space-x-2"
+          >
+            <!-- Left Arrow Icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            <span>Return to Information</span>
+          </a>
+
+          <!-- Right: Continue Shipping -->
+          <a
+            href="shipping.html"
+            class="btn btn-primary flex items-center space-x-2"
+          >
+            <span>Continue Shipping</span>
+            <!-- Right Arrow Icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Side: Placeholder for now -->
+      <div class="flex-1 bg-white p-6 rounded-lg shadow-md">
+        <!-- You can put order summary or something else here -->
+      </div>
+    </section>
+  </body>
+</html>

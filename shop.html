@@ -24,7 +24,6 @@
   <body>
     <!-- Navbar -->
     <div class="navbar bg-amber-50 px-6 md:px-12 shadow-sm">
-      <!-- LEFT: Search -->
       <div class="flex-1">
         <div
           class="flex items-center gap-1 border rounded-full px-4 py-2 bg-base-200 w-fit"
@@ -41,29 +40,21 @@
           />
         </div>
       </div>
-
-      <!-- CENTER: Logo + Title -->
       <div class="hidden sm:flex flex-none text-center">
         <a href="index.html" class="flex items-center gap-2">
           <img src="images/logo.png" class="w-8 h-8 rounded-full" />
           <span class="text-2xl font-bold text-amber-600">Petit Cotton</span>
         </a>
       </div>
-      <!-- RIGHT: Menu + Profile + Cart -->
       <div class="flex-1 flex justify-end items-center gap-3">
-        <!-- Navigation Links -->
         <div class="hidden lg:flex gap-6 font-medium">
           <a href="shop.html" class="hover:text-orange-400">Shop</a>
           <a href="#" class="hover:text-orange-400">Collections</a>
           <a href="#" class="hover:text-orange-400">About</a>
         </div>
-
-        <!-- Profile Button -->
         <button class="btn btn-ghost btn-circle hover:bg-orange-200">
           <img src="images/person.png" class="w-8 h-8" />
         </button>
-
-        <!-- Cart Button -->
         <div class="relative">
           <a href="cart.html">
             <button class="btn btn-ghost btn-circle hover:bg-orange-200">
@@ -80,7 +71,6 @@
         </div>
       </div>
     </div>
-    <!-- Mobile Catalog Button -->
     <div class="lg:hidden p-4">
       <button onclick="toggleSidebar()" class="btn btn-outline w-full">
         ☰ Catalog
@@ -103,18 +93,22 @@
             <input type="checkbox" class="checkbox checkbox-warning peer" />
             <span class="peer-checked:font-bold">All Clothing</span>
           </label>
+
           <label class="cursor-pointer flex items-center gap-2">
             <input type="checkbox" class="checkbox checkbox-warning peer" />
             <span class="peer-checked:font-bold">Onesies</span>
           </label>
+
           <label class="cursor-pointer flex items-center gap-2">
             <input type="checkbox" class="checkbox checkbox-warning peer" />
             <span class="peer-checked:font-bold">Sets & Outfits</span>
           </label>
+
           <label class="cursor-pointer flex items-center gap-2">
             <input type="checkbox" class="checkbox checkbox-warning peer" />
             <span class="peer-checked:font-bold">Knitwear</span>
           </label>
+
           <label class="cursor-pointer flex items-center gap-2">
             <input type="checkbox" class="checkbox checkbox-warning peer" />
             <span class="peer-checked:font-bold">Accessories</span>
@@ -127,18 +121,23 @@
           <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
             0-3m
           </button>
+
           <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
             3-6m
           </button>
+
           <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
             6-12m
           </button>
+
           <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
             12-18m
           </button>
+
           <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
             18-24m
           </button>
+
           <button class="size-btn btn btn-outline btn-sm hover:bg-orange-300">
             2T
           </button>
@@ -150,52 +149,51 @@
           <button
             class="color-btn w-7 h-7 rounded-full bg-base-200 border-2 border-transparent"
           ></button>
+
           <button
             class="color-btn w-7 h-7 rounded-full bg-pink-200 border-2 border-transparent"
           ></button>
+
           <button
             class="color-btn w-7 h-7 rounded-full bg-amber-700 border-2 border-transparent"
           ></button>
+
           <button
             class="color-btn w-7 h-7 rounded-full bg-lime-600 border-2 border-transparent"
           ></button>
+
           <button
             class="color-btn w-7 h-7 rounded-full bg-lime-900 border-2 border-transparent"
           ></button>
+
           <button
             class="color-btn w-7 h-7 rounded-full bg-amber-900 border-2 border-transparent"
           ></button>
         </div>
       </aside>
 
-      <!-- Main Section -->
+      <!-- Main -->
       <main class="w-full lg:w-3/4 p-6">
-        <!-- Top Info + Sort Dropdown -->
         <div
           class="mb-5 relative border-b pb-6 flex flex-col md:flex-row md:items-end gap-4"
         >
-          <!-- Left Side: Breadcrumb + Title + Description -->
+          <!-- Left Side -->
           <div class="flex-1 flex flex-col gap-2">
-            <!-- Breadcrumb -->
             <p class="text-gray-500 text-sm">
               <a href="index.html" class="hover:text-orange-500">Home</a>
               <span class="mx-1">/</span> Shop <span class="mx-1">/</span> NEW
               ARRIVALS
             </p>
-
-            <!-- Title -->
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2">
               NEW ARRIVALS
             </h2>
-
-            <!-- Description -->
             <p class="text-gray-400 max-w-xl">
               Timeless pieces crafted from the softest organic cotton for your
               little one's comfort.
             </p>
           </div>
 
-          <!-- Right Side: Sort Dropdown -->
+          <!-- Right Side -->
           <div class="flex-shrink-0 mt-4 md:mt-0 md:ml-4">
             <div class="dropdown dropdown-end">
               <label
@@ -230,9 +228,9 @@
           </div>
         </div>
 
-        <!-- Products Grid -->
+        <!-- Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-          <!-- Card 1 -->
+          <!-- 1 -->
           <a
             href="details.html?product=cardigan&category=baby-boy"
             class="block"
@@ -259,7 +257,7 @@
             </div>
           </a>
 
-          <!-- Card 2 -->
+          <!-- 2 -->
           <a href="details.html?product=onesie&category=baby-boy" class="block">
             <div
               class="bg-amber-50 p-4 rounded-2xl shadow relative hover:shadow-lg transition duration-300 cursor-pointer"
@@ -278,7 +276,7 @@
             </div>
           </a>
 
-          <!-- Card 3 -->
+          <!-- 3 -->
           <a href="details.html?product=jumper&category=baby-boy" class="block">
             <div
               class="bg-amber-50 p-4 rounded-2xl shadow relative hover:shadow-lg transition duration-300 cursor-pointer"
@@ -303,7 +301,7 @@
             </div>
           </a>
 
-          <!-- Card 4 -->
+          <!-- 4 -->
           <a
             href="details.html?product=romper&category=baby-girl"
             class="block"
@@ -325,7 +323,7 @@
             </div>
           </a>
 
-          <!-- Card 5 -->
+          <!-- 5 -->
           <a
             href="details.html?product=booties&category=baby-girl"
             class="block"
@@ -347,7 +345,7 @@
             </div>
           </a>
 
-          <!-- Card 6 -->
+          <!-- 6 -->
           <a
             href="details.html?product=essentials-set&category=baby-girl"
             class="block"
@@ -374,7 +372,7 @@
             </div>
           </a>
 
-          <!-- Card 7 -->
+          <!-- 7 -->
           <a
             href="details.html?product=overalls&category=baby-boy"
             class="block"
@@ -396,7 +394,7 @@
             </div>
           </a>
 
-          <!-- Card 8 -->
+          <!-- 8 -->
           <a href="details.html?product=beanie&category=baby-boy" class="block">
             <div
               class="bg-amber-50 p-4 rounded-2xl shadow relative hover:shadow-lg transition duration-300 cursor-pointer"
@@ -420,10 +418,9 @@
             </div>
           </a>
         </div>
-        <!-- Pagination -->
+
         <div class="flex justify-center mt-10 mb-8">
           <div class="flex items-center gap-2">
-            <!-- Previous -->
             <button
               class="page-btn btn btn-sm btn-outline hover:bg-orange-200 border-none"
               data-page="prev"
@@ -431,7 +428,7 @@
               &lt;
             </button>
 
-            <!-- Page 1 -->
+            <!-- Page1 -->
             <button
               class="page-btn btn btn-sm bg-orange-500 hover:bg-orange-200 border-orange-500"
               data-page="1"
@@ -439,26 +436,22 @@
               1
             </button>
 
-            <!-- Page 2 -->
+            <!-- Page2 -->
             <button
               class="page-btn btn btn-sm btn-outline hover:bg-orange-200 border-none"
               data-page="2"
             >
               2
             </button>
-
-            <!-- Dots -->
             <span id="dots" class="px-2">...</span>
 
-            <!-- Page 3 (hidden initially) -->
+            <!-- Page3 -->
             <button
               class="page-btn btn btn-sm btn-outline hover:bg-orange-200 hidden border-none"
               data-page="3"
             >
               3
             </button>
-
-            <!-- Next -->
             <button
               class="page-btn btn btn-sm btn-outline hover:bg-orange-200 border-none"
               data-page="next"
@@ -470,16 +463,16 @@
       </main>
     </div>
 
-    <!-- JavaScript -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        /* ===== Toggle Sidebar (Mobile) ===== */
+        //sidebar
         window.toggleSidebar = function () {
           const sidebar = document.getElementById("sidebar");
           sidebar.classList.toggle("-translate-x-full");
         };
 
-        /* ===== SIZE BUTTONS ===== */
+        // size buttons
+
         const sizeButtons = document.querySelectorAll(".size-btn");
         sizeButtons.forEach((button) => {
           button.addEventListener("click", function () {
@@ -500,7 +493,7 @@
           });
         });
 
-        /* ===== SORT DROPDOWN ===== */
+        // sort dropdown
         const sortLinks = document.querySelectorAll(".dropdown-content a");
         const sortSelected = document.getElementById("sort-selected");
         sortLinks.forEach((link) => {
@@ -512,7 +505,6 @@
           });
         });
 
-        /* ===== PAGINATION ===== */
         const pageButtons = document.querySelectorAll(".page-btn");
         const dots = document.getElementById("dots");
 
@@ -543,7 +535,6 @@
             );
           }
 
-          // Show page 3 only when on page 2 or 3
           const page3 = document.querySelector('.page-btn[data-page="3"]');
           if (page >= 2) {
             page3.classList.remove("hidden");
@@ -568,7 +559,7 @@
           });
         });
 
-        /* ===== COLOR BUTTONS ===== */
+        // color buttons
         const colorButtons = document.querySelectorAll(".color-btn");
         colorButtons.forEach((button) => {
           button.addEventListener("click", function () {
@@ -581,17 +572,16 @@
           });
         });
 
-        /* ===== CART BADGE ===== */
+        //cart badge
         function updateCartBadge() {
           const cart = JSON.parse(localStorage.getItem("cart")) || [];
           const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
           const cartCount = document.getElementById("cart-count");
           if (cartCount) {
-            cartCount.textContent = totalItems; // Shows 0 if empty
+            cartCount.textContent = totalItems;
           }
         }
 
-        // Run on page load
         updateCartBadge();
       });
     </script>

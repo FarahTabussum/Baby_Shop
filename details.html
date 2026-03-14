@@ -23,31 +23,23 @@
   </head>
 
   <body class="bg-base-100">
-    <!-- ================= NAVBAR ================= -->
+    <!-- NAVBAR -->
     <div class="navbar bg-amber-50 px-6 md:px-12 shadow-sm">
-      <!-- LEFT: Search -->
-      <!-- CENTER: Logo + Title -->
       <div class="sm:flex flex-none text-center">
         <a href="index.html" class="flex items-center gap-2">
           <img src="images/logo.png" class="w-8 h-8 rounded-full" />
           <span class="text-2xl font-bold text-amber-600">Petit Cotton</span>
         </a>
       </div>
-      <!-- RIGHT: Menu + Profile + Cart -->
       <div class="flex-1 flex justify-end items-center gap-3">
-        <!-- Navigation Links -->
         <div class="hidden lg:flex gap-6 font-medium">
           <a href="shop.html" class="hover:text-orange-400">Shop</a>
           <a href="#" class="hover:text-orange-400">Collections</a>
           <a href="#" class="hover:text-orange-400">About</a>
         </div>
-
-        <!-- Profile Button -->
         <button class="btn btn-ghost btn-circle hover:bg-orange-200">
           <img src="images/person.png" class="w-8 h-8" />
         </button>
-
-        <!-- Cart Button -->
         <div class="relative">
           <a href="cart.html">
             <button class="btn btn-ghost btn-circle hover:bg-orange-200">
@@ -65,9 +57,8 @@
       </div>
     </div>
 
-    <!-- ================= PRODUCT SECTION ================= -->
+    <!-- PRODUCT SECTION -->
     <div class="max-w-6xl mx-auto px-6 py-12">
-      <!-- Breadcrumb -->
       <div class="mb-8">
         <p class="text-gray-500 text-sm">
           <a href="index.html" class="hover:text-orange-500">Home</a>
@@ -81,25 +72,19 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <!-- ================= LEFT IMAGE GALLERY ================= -->
+        <!-- LEFT SIde -->
         <div>
-          <!-- Main Image Wrapper -->
           <div class="relative">
-            <!-- Dynamic Badge -->
             <div
               id="product-badge"
               class="absolute top-4 left-4 hidden px-4 py-1 text-sm font-semibold rounded-full text-white"
             ></div>
-
-            <!-- Main Image -->
             <img
               id="main-image"
               src="images/Baby wearing beige knit sweater.png"
               class="w-full rounded-2xl shadow-lg mb-4"
             />
           </div>
-
-          <!-- Thumbnails -->
           <div class="flex gap-12">
             <img
               src="images/Baby wearing beige knit romper.png"
@@ -132,10 +117,8 @@
           </div>
         </div>
 
-        <!-- ================= RIGHT PRODUCT INFO ================= -->
-        <!-- ================= RIGHT PRODUCT INFO ================= -->
+        <!-- RIGHT side -->
         <div class="space-y-4">
-          <!-- Title + Wishlist -->
           <div class="flex items-center justify-between">
             <h1 id="product-title" class="text-4xl font-bold text-amber-800">
               Product Title
@@ -148,10 +131,7 @@
             </button>
           </div>
 
-          <!-- Color info -->
           <p id="product-color" class="text-gray-600 text-sm">Color: Beige</p>
-
-          <!-- Price + Rating -->
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
               <span id="product-price" class="text-2xl font-bold text-gray-800"
@@ -170,14 +150,10 @@
               >)
             </button>
           </div>
-
-          <!-- Description -->
           <p id="product-description" class="text-gray-600">
             Crafted from 100% organic cotton, this soft knit cardigan keeps your
             little one warm and comfortable.
           </p>
-
-          <!-- Size Selection -->
           <div>
             <p class="font-semibold mb-2">Select Size</p>
 
@@ -215,9 +191,7 @@
             </div>
           </div>
 
-          <!-- Add to Cart -->
           <div class="grid grid-cols-2 items-center gap-4">
-            <!-- Quantity Selector -->
             <div
               class="grid grid-cols-3 items-center border rounded-lg overflow-hidden"
             >
@@ -237,8 +211,6 @@
                 +
               </button>
             </div>
-
-            <!-- Add to Cart -->
             <button
               id="add-to-cart-btn"
               class="btn bg-orange-500 text-white hover:bg-orange-600 px-8"
@@ -247,15 +219,12 @@
             </button>
           </div>
 
-          <!-- Stock Message -->
           <div
             class="bg-green-100 text-green-700 text-sm rounded-lg px-4 py-2 flex items-center justify-center gap-2 mt-3"
           >
             <img src="images/tick_Icon.png" class="w-4 h-4" />
             <span>In stock, ready to ship</span>
           </div>
-
-          <!-- paragraph -->
           <p class="text-gray-400 text-md pt-2">
             <span
               >Crafted from GOTS certified organic cotton, this heirloom-
@@ -268,7 +237,7 @@
 
           <!-- dropdown -->
           <div class="mt-6 space-y-3">
-            <!-- Dropdown 1 -->
+            <!-- 1 -->
             <div class="collapse border border-gray-200 rounded-lg">
               <input type="checkbox" />
               <div
@@ -285,7 +254,7 @@
               </div>
             </div>
 
-            <!-- Dropdown 2 -->
+            <!-- 2 -->
             <div class="collapse border border-gray-200 rounded-lg">
               <input type="checkbox" />
               <div
@@ -299,7 +268,7 @@
               </div>
             </div>
 
-            <!-- Dropdown 3 -->
+            <!-- 3 -->
             <div class="collapse border border-gray-200 rounded-lg">
               <input type="checkbox" />
               <div
@@ -318,8 +287,7 @@
           </div>
         </div>
 
-        <!-- Rating Modal -->
-        <!-- Rating Modal -->
+        <!-- Rating -->
         <dialog id="rating-modal" class="modal">
           <form method="dialog" class="modal-box">
             <h3 class="font-bold text-lg mb-4">Rate this product</h3>
@@ -343,9 +311,8 @@
       </div>
     </div>
 
-    <!-- ================= SCRIPT ================= -->
     <script>
-      // ===== Size Selection =====
+      //Size select
       const sizeButtons = document.querySelectorAll(".size-btn");
       sizeButtons.forEach((button) => {
         button.addEventListener("click", function () {
@@ -366,12 +333,12 @@
         });
       });
 
-      // ===== Get URL Params =====
+      //Get url
       const params = new URLSearchParams(window.location.search);
       const productKey = params.get("product") || "cardigan";
       const categoryKey = params.get("category") || "baby-boy";
 
-      // ===== Cart Counter =====
+      //Cart
       const cartBtn = document.getElementById("add-to-cart-btn");
       const cartCount = document.getElementById("cart-count");
 
@@ -397,11 +364,11 @@
 
         localStorage.setItem("cart", JSON.stringify(cart));
 
-        // Update cart badge immediately
+        //update cart badge
         updateCartBadge();
       });
 
-      // ===== Product Database =====
+      //Database
       const products = {
         cardigan: {
           title: "Organic Cotton Knit Cardigan",
@@ -465,11 +432,9 @@
 
       const product = products[productKey];
 
-      // ===== Load Cart Count From localStorage =====
+      //Load cart count
       function updateCartBadge() {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-        // Initialize totalItems to 0
         let totalItems = 0;
 
         cart.forEach((item) => {
@@ -483,10 +448,9 @@
         }
       }
 
-      // Run when page loads
       updateCartBadge();
 
-      // ===== Update Text =====
+      //Update text
       document.getElementById("breadcrumb-title").textContent = product.title;
 
       document.getElementById("product-title").textContent = product.title;
@@ -499,11 +463,11 @@
       document.getElementById("breadcrumb-category").textContent =
         categories[categoryKey] || "BABY BOY";
 
-      // ===== Update Main Image =====
+      //Main Image update=====
       const mainImage = document.getElementById("main-image");
       mainImage.src = product.image;
 
-      // ===== Quantity Selector =====
+      //Quantity select
       const minusBtn = document.getElementById("qty-minus");
       const plusBtn = document.getElementById("qty-plus");
       const qtyValue = document.getElementById("qty-value");
@@ -523,7 +487,6 @@
       });
 
       //price update
-
       const oldPriceEl = document.getElementById("old-price");
 
       if (product.oldPrice) {
@@ -531,19 +494,18 @@
         oldPriceEl.classList.remove("hidden");
       }
 
-      // ===== Wishlist Heart =====
+      //heart
       const wishlistBtn = document.getElementById("wishlist-btn");
       wishlistBtn.addEventListener("click", () => {
         wishlistBtn.classList.toggle("text-red-500"); // toggles red color
       });
 
-      // ===== Rating Modal =====
+      //Rating
       const ratingBtn = document.getElementById("rating-btn");
       const ratingModal = document.getElementById("rating-modal");
       const stars = document.querySelectorAll(".rate-star");
       const ratingCount = document.getElementById("rating-count");
 
-      // Show modal on click
       ratingBtn.addEventListener("click", () => {
         if (typeof ratingModal.showModal === "function") {
           ratingModal.showModal();
@@ -552,19 +514,17 @@
         }
       });
 
-      // Star click logic
       stars.forEach((star, index) => {
         star.addEventListener("click", () => {
           stars.forEach((s, i) => {
             s.textContent = i <= index ? "★" : "☆";
             s.classList.toggle("text-yellow-400", i <= index);
           });
-          // Increment review count
           ratingCount.textContent = parseInt(ratingCount.textContent) + 1;
         });
       });
 
-      // ===== Badge Logic =====
+      //cart badge
       const badge = document.getElementById("product-badge");
 
       if (product.tag) {
@@ -586,7 +546,7 @@
         }
       }
 
-      // ===== Image Gallery =====
+      //img gallery
       const thumbnails = document.querySelectorAll(".thumb");
       const videoThumb = document.querySelector(".thumb-video");
 

@@ -23,19 +23,16 @@
   </head>
 
   <body class="bg-base-100">
-    <!-- ================= NAVBAR ================= -->
+    <!--NAVBAR-->
     <div
       class="navbar bg-base-100 px-2 sm:px-4 md:px-10 shadow-sm flex justify-between items-center flex-wrap"
     >
-      <!-- Left: Logo + Menu -->
       <div class="flex items-center gap-4 sm:gap-10 flex-shrink-0">
         <div class="flex items-center gap-2 sm:gap-3">
-          <!-- Logo: smaller on small screens -->
           <img
             src="images/logo.png"
             class="w-6 h-6 sm:w-8 sm:h-8 rounded-full"
           />
-          <!-- Text: smaller on small screens -->
           <a
             href="index.html"
             class="text-lg sm:text-3xl font-bold text-amber-600 truncate"
@@ -43,8 +40,6 @@
             Petit Cotton
           </a>
         </div>
-
-        <!-- Menu: hidden on small screens -->
         <ul class="menu menu-horizontal px-1 font-medium gap-2 hidden lg:flex">
           <li><a href="index.html" class="text-gray-500">Shop Baby</a></li>
           <li><a href="shop.html" class="text-gray-500">New arrivals</a></li>
@@ -52,17 +47,14 @@
           <li><a class="text-gray-500">Sale</a></li>
         </ul>
       </div>
-
-      <!-- Right: Search + Avatar + Cart -->
       <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-        <!-- Search: hide on small -->
         <input
           type="text"
           placeholder="Search..."
           class="hidden lg:block input input-bordered max-w-xs w-auto rounded-2xl"
         />
 
-        <!-- Avatar Dropdown -->
+        <!-- Dropdown -->
         <div class="dropdown dropdown-end">
           <label tabindex="0" class="btn btn-ghost btn-circle avatar">
             <div class="w-8 sm:w-10 rounded-full shadow-sm bg-orange-100">
@@ -83,7 +75,7 @@
           </ul>
         </div>
 
-        <!-- Cart Button -->
+        <!-- CartButton -->
         <div class="relative">
           <a href="cart.html">
             <button class="btn btn-ghost btn-circle hover:bg-orange-200">
@@ -110,9 +102,8 @@
     <section>
       <div class="sm:mx-auto px-10 py-6 lg:mx-20">
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-20">
-          <!-- LEFT SECTION (3/4 WIDTH) -->
+          <!-- LEFT Side-->
           <div class="lg:col-span-3">
-            <!-- Column Titles -->
             <div
               class="grid grid-cols-3 pb-3 border-b font-semibold text-gray-600"
             >
@@ -120,12 +111,8 @@
               <p class="text-center text-amber-700">Quantity</p>
               <p class="text-right text-amber-700">Price</p>
             </div>
-
-            <!-- Cart Items Container -->
             <div id="cart-items" class="mt-4 space-y-4">
-              <!-- CART ITEM ROW -->
               <div class="grid grid-cols-3 items-center border-b pb-4">
-                <!-- PRODUCT -->
                 <div class="flex gap-4">
                   <img
                     src="images/Baby wearing beige knit sweater.png"
@@ -140,7 +127,6 @@
                       <span class="mx-2">•</span>
                       Color: Oatmeal
                     </p>
-
                     <button
                       class="flex items-center gap-2 text-sm text-red-500 mt-2 hover:underline remove-item"
                     >
@@ -149,8 +135,6 @@
                     </button>
                   </div>
                 </div>
-
-                <!-- QUANTITY -->
                 <div class="flex justify-center">
                   <div
                     class="flex items-center border rounded-lg overflow-hidden"
@@ -166,13 +150,10 @@
                     </button>
                   </div>
                 </div>
-
-                <!-- PRICE -->
                 <div class="text-right font-semibold product-price">$42.00</div>
               </div>
             </div>
 
-            <!-- Continue Shopping Button -->
             <div class="mt-6 shadow-md bg-amber-50 p-3 rounded-lg w-full">
               <a href="shop.html">
                 <button
@@ -185,32 +166,26 @@
             </div>
           </div>
 
-          <!-- RIGHT SECTION (1/4 WIDTH) -->
-          <!-- RIGHT SECTION (Order Summary) -->
+          <!-- RIGHT side -->
           <div
             class="lg:col-span-2 w-full border rounded-xl p-6 mt-0 space-y-4"
           >
             <h2 class="text-xl font-bold mb-6">Order Summary</h2>
 
-            <!-- Subtotal -->
             <div class="flex justify-between mb-3">
               <span>Subtotal</span>
               <span id="subtotal-price" class="font-bold">$0.00</span>
             </div>
 
-            <!-- Shipping -->
             <div class="flex justify-between mb-3 text-gray-600">
               <span>Shipping Estimate</span>
               <span class="font-semibold">$5.00</span>
             </div>
-
-            <!-- Tax -->
             <div class="flex justify-between mb-5 text-gray-600">
               <span>Tax Estimate</span>
               <span class="font-semibold">$6.80</span>
             </div>
 
-            <!-- Order Total -->
             <div class="border-t pt-4 flex justify-between items-center">
               <div>
                 <p class="font-bold">Order Total</p>
@@ -224,7 +199,6 @@
               </div>
             </div>
 
-            <!-- Gift Card / Discount Code -->
             <div class="border-t pt-4 space-y-3">
               <p class="font-semibold text-gray-700">
                 Gift card or discount code
@@ -243,7 +217,6 @@
                 </button>
               </div>
 
-              <!-- Proceed to Checkout -->
               <div class="text-center mt-10">
                 <a href="checkout.html">
                   <button
@@ -255,16 +228,12 @@
                 </a>
               </div>
             </div>
-            <!-- Secure Checkout Section -->
             <div class="border-t pt-6 text-center space-y-3">
-              <!-- Payment Icons -->
               <div class="flex flex-row justify-center items-center gap-5">
                 <img src="images/Container (1).png" class="h-6 mt-2" />
                 <img src="images/Icon (1).png" class="h-6" />
                 <img src="images/Icon (2).png" class="h-6" />
               </div>
-
-              <!-- Secure Text -->
               <p class="text-xs text-gray-500">Secure encrypted checkout</p>
             </div>
           </div>
@@ -272,10 +241,9 @@
       </div>
     </section>
     <section class="max-w-7xl mx-auto px-10 py-12">
-      <!-- Title -->
       <h2 class="text-2xl font-semibold mb-8">You might also like</h2>
 
-      <!-- Product Grid -->
+      <!-- Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- CARD 1 -->
         <div class="border rounded-xl p-4 text-center shadow-sm">
@@ -300,7 +268,7 @@
           </button>
         </div>
 
-        <!-- CARD 2 -->
+        <!-- CARD2 -->
         <div class="border rounded-xl p-4 text-center shadow-sm">
           <img
             src="images/Soft organic baby socks pack.png"
@@ -323,7 +291,7 @@
           </button>
         </div>
 
-        <!-- CARD 3 -->
+        <!-- CARD3 -->
         <div class="border rounded-xl p-4 text-center shadow-sm">
           <img
             src="images/Soft plush bear toy.png"
@@ -346,7 +314,7 @@
           </button>
         </div>
 
-        <!-- CARD 4 -->
+        <!-- CARD4 -->
         <div class="border rounded-xl p-4 text-center shadow-sm">
           <img
             src="images/Baby bib with animal print.png"
@@ -374,7 +342,7 @@
       <div
         class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
       >
-        <!-- Column 1 -->
+        <!-- Column1 -->
         <div>
           <div class="flex items-center gap-3 mb-4">
             <img src="images/logo.png" class="w-8 h-8 rounded-full" />
@@ -387,7 +355,7 @@
           </p>
         </div>
 
-        <!-- Column 2 -->
+        <!-- Column2 -->
         <div>
           <h3 class="font-semibold text-lg mb-4">Shop</h3>
 
@@ -399,7 +367,7 @@
           </ul>
         </div>
 
-        <!-- Column 3 -->
+        <!-- Column3 -->
         <div>
           <h3 class="font-semibold text-lg mb-4">Support</h3>
 
@@ -413,7 +381,7 @@
           </ul>
         </div>
 
-        <!-- Column 4 -->
+        <!-- Column4 -->
         <div>
           <h3 class="font-semibold text-lg mb-4">Stay Connected</h3>
 
@@ -436,8 +404,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Bottom Bar -->
       <div
         class="border-t justify-between flex items-center text-sm text-gray-500 py-4 px-5"
       >
@@ -450,7 +416,7 @@
       </div>
     </footer>
     <script>
-      // ===== Load Cart From localStorage =====
+      //Load Cart
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
       const cartContainer = document.getElementById("cart-items");
@@ -463,12 +429,12 @@
       const SHIPPING = 5.0;
       const TAX = 6.8;
 
-      // ===== Helper: Convert price to number =====
+      //price to num
       function getNumericPrice(price) {
         return parseFloat(price.toString().replace("$", ""));
       }
 
-      // ===== Update Cart Info =====
+      //update cart info
       function updateSummary() {
         let totalItems = 0;
         let subtotal = 0;
@@ -490,7 +456,7 @@
         orderTotalElement.textContent = `$${orderTotal.toFixed(2)}`;
       }
 
-      // ===== Render Cart Items =====
+      //render cart items
       function renderCart() {
         cartContainer.innerHTML = "";
 
@@ -538,7 +504,7 @@
         updateSummary();
       }
 
-      // ===== Remove Item =====
+      //rmv item
       document.addEventListener("click", function (e) {
         const removeBtn = e.target.closest(".remove-btn");
 
@@ -553,7 +519,7 @@
         }
       });
 
-      // ===== Change Quantity =====
+      //chng quantity
       document.addEventListener("click", function (e) {
         if (e.target.classList.contains("qty-plus")) {
           const index = e.target.dataset.index;
@@ -574,7 +540,7 @@
         renderCart();
       });
 
-      // ===== Add Recommended Product to Cart =====
+      //Add product to cart
       document.addEventListener("click", function (e) {
         if (e.target.classList.contains("add-related-cart")) {
           let title = e.target.dataset.title;
@@ -609,7 +575,6 @@
         }
       });
 
-      // ===== Start Page =====
       renderCart();
     </script>
   </body>

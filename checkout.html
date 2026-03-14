@@ -24,7 +24,6 @@
   <body>
     <!-- Navbar -->
     <nav class="bg-white shadow-sm px-6 py-4 flex justify-between items-center">
-      <!-- Left side: Logo + Text -->
       <div class="flex items-center space-x-2">
         <img
           src="images/Container (4).png"
@@ -35,23 +34,17 @@
           Petit Cotton
         </span>
       </div>
-
-      <!-- Right side: Buttons -->
       <div class="flex items-center space-x-4">
-        <!-- Return To Cart Button -->
         <a
           href="cart.html"
           class="btn bg-base-100 btn-sm text-amber-500 rounded-lg hover:bg-amber-100"
         >
           Return To Cart
         </a>
-
-        <!-- Secure Checkout Button -->
         <a
           href="checkout.html"
           class="hidden md:flex btn bg-base-100 btn-sm items-center space-x-2 hover:bg-amber-100"
         >
-          <!-- Icon -->
           <img
             src="images/Container (3).png"
             alt="Lock Icon"
@@ -61,11 +54,9 @@
         </a>
       </div>
     </nav>
-    <!-- Checkout Section -->
     <section class="px-6 py-8 flex flex-col md:flex-row gap-6 items-start">
-      <!-- Left Side: Steps & Shipping -->
+      <!-- Left Side -->
       <div class="w-full md:w-3/4 bg-white p-6 rounded-lg shadow-md">
-        <!-- Steps -->
         <div
           class="flex flex-wrap items-center text-gray-500 text-sm font-medium space-x-2 mb-6 sm:flex-nowrap"
         >
@@ -78,24 +69,19 @@
           <span class="text-amber-600 font-semibold">Payment</span>
         </div>
 
-        <!-- Shipping Address Section -->
+        <!-- Shipping add section -->
         <div class="mb-4">
-          <!-- Title + Counter -->
           <div class="flex justify-between items-center mb-2">
             <h2 class="text-lg font-bold text-gray-800">Shipping Address</h2>
             <span class="text-sm text-gray-600 font-medium">0/9</span>
           </div>
-
-          <!-- Progress Bar -->
           <div class="h-4 bg-gray-200 rounded-full">
             <div
               class="h-4 w-0 bg-green-500 rounded-full transition-all duration-300"
             ></div>
           </div>
         </div>
-        <!-- Contact Info Section -->
         <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-          <!-- Header: CONTACT + Change Button -->
           <div class="flex justify-between items-center mb-3">
             <h3 class="text-lg font-bold text-gray-800">CONTACT</h3>
             <button class="text-sm text-gray-600 bg-base-100 btn btn-sm">
@@ -108,10 +94,7 @@
             placeholder="Enter Email.."
             class="input input-bordered w-full"
           />
-
-          <!-- Input Fields: First Name & Last Name -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <!-- First Name -->
             <div class="flex flex-col my-4">
               <label
                 class="text-sm font-medium text-gray-600 mb-1"
@@ -126,7 +109,6 @@
               />
             </div>
 
-            <!-- Last Name -->
             <div class="flex flex-col my-4">
               <label
                 class="text-sm font-medium text-gray-600 mb-1"
@@ -141,11 +123,7 @@
               />
             </div>
           </div>
-          <!-- Shipping Address Form -->
 
-          <!-- Header: CONTACT + Change button already done above if needed -->
-
-          <!-- Address -->
           <div class="mb-4">
             <label class="text-sm font-medium text-gray-600 mb-1" for="address"
               >Address</label
@@ -154,7 +132,6 @@
               <span
                 class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
               >
-                <!-- Example home/location icon SVG -->
                 <img
                   src="images/Icon (4).png"
                   alt="Home Icon"
@@ -169,8 +146,6 @@
               />
             </div>
           </div>
-
-          <!-- Apartment/Suite -->
           <div class="mb-4">
             <label
               class="text-sm font-medium text-gray-600 mb-1"
@@ -185,7 +160,6 @@
             />
           </div>
 
-          <!-- Zip Code / City / State -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div class="flex flex-col">
               <label class="text-sm font-medium text-gray-600 mb-1" for="zip"
@@ -222,28 +196,16 @@
             </div>
           </div>
 
-          <!-- Phone -->
           <div class="mb-4">
             <label class="text-sm font-medium text-gray-600 mb-1" for="phone"
               >Phone</label
             >
             <div class="relative flex items-center">
               <span class="absolute left-3 text-gray-400 flex items-center">
-                <!-- Phone icon SVG -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 5h2l3 7-2 2a11 11 0 005 5l2-2 7 3v2a1 1 0 01-1 1h-2a16 16 0 01-16-16V6a1 1 0 011-1z"
-                  />
-                </svg>
+                <img
+                  src="images/Icon (5).png"
+                  class="h-5 w-5 object-cover rounded-md"
+                />
               </span>
               <input
                 id="phone"
@@ -256,8 +218,6 @@
               >
             </div>
           </div>
-
-          <!-- Save Info Checkbox -->
           <div class="flex items-center mt-7">
             <input
               type="checkbox"
@@ -269,16 +229,14 @@
             >
           </div>
         </div>
-        <!-- Navigation Buttons -->
+
         <div
           class="flex flex-col sm:flex-row justify-between items-center mt-10 gap-4"
         >
-          <!-- Left: Return to Information -->
           <a
             href="cart.html"
             class="btn btn-ghost flex items-center w-full sm:w-auto justify-center"
           >
-            <!-- Left Arrow Icon -->
             <img
               src="images/arrow_left.jpg"
               class="h-4 w-4 mr-2"
@@ -286,14 +244,12 @@
             />
             <span>Return to Information</span>
           </a>
-
-          <!-- Right: Continue Shipping -->
           <a
             href="shipping.html"
             class="btn bg-amber-700 rounded-xl hover:bg-amber-300 text-white flex items-center w-full sm:w-auto justify-center"
           >
             <span>Continue To Payment</span>
-            <!-- Right Arrow Icon -->
+
             <img
               src="images/arrow_right.png"
               class="h-4 w-4 ml-2"
@@ -303,49 +259,38 @@
         </div>
       </div>
 
-      <!-- Right Side: Placeholder for now -->
+      <!-- Right Side -->
       <div class="w-full md:w-1/4 bg-white p-6 rounded-lg h-auto shadow-md">
-        <!-- Title -->
         <p class="font-bold text-xl mb-7">Order Summary</p>
 
-        <!-- Products from Cart -->
         <div id="checkout-items" class="space-y-4"></div>
-        <!-- Discount Code -->
         <div class="mt-6">
           <div class="flex gap-3">
-            <!-- Input -->
             <input
               type="text"
               placeholder="Discount code"
               class="input input-bordered w-full"
             />
 
-            <!-- Apply Button -->
             <button class="btn btn-outline hover:bg-amber-300">Apply</button>
           </div>
         </div>
-        <!-- Price Summary -->
         <div class="mt-6 border-t pt-4 space-y-3">
-          <!-- Subtotal -->
           <div class="flex justify-between">
             <span class="text-gray-600">Subtotal</span>
             <span id="checkout-subtotal" class="font-medium">$0.00</span>
           </div>
-
-          <!-- Shipping -->
           <div class="flex justify-between">
             <span class="text-gray-600">Shipping</span>
             <span class="text-gray-500">Calculated next step</span>
           </div>
 
-          <!-- Estimated Taxes -->
           <div class="flex justify-between">
             <span class="text-gray-600">Estimated Taxes</span>
             <span id="checkout-tax" class="font-semibold">$6.40</span>
           </div>
         </div>
 
-        <!-- Total -->
         <div class="flex justify-between items-center border-t pt-4 mt-4">
           <span class="text-lg font-semibold">Total</span>
 
@@ -356,10 +301,7 @@
         </div>
 
         <div class="flex flex-col md:w-1/4">
-          <!-- Right Column: Order Summary -->
-          <div class="bg-white p-6 rounded-lg">
-            <!-- ... your Order Summary code ... -->
-          </div>
+          <div class="bg-white p-6 rounded-lg"></div>
         </div>
       </div>
 
@@ -429,12 +371,12 @@
     </section>
     <footer class="bg-base-100 py-4 px-6 border-t mt-12">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <!-- Left Side -->
+        <!-- Left side -->
         <p class="text-gray-600 text-sm">
           © 2023 Petit Coton Inc. All rights reserved.
         </p>
 
-        <!-- Right Side -->
+        <!-- Right side -->
         <div class="flex space-x-6">
           <a href="#" class="text-gray-600 text-sm hover:text-amber-700"
             >Refund policy</a
